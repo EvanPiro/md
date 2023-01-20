@@ -1,4 +1,16 @@
-# Flake Starter
+# `md`
 
-A starter project utilizing a nix flake for development and deployment.
+A shortcut for making markdown files.
+
+## Example
+
+The following will open your default editor for `idea.md`.
+
+```
+$ md idea
+```
+
+## Note
+
+The editor is determined by your `$EDITOR` environment variable.
 
