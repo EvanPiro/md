@@ -17,6 +17,10 @@
         md = import ./. pkgs;
       in {
         # Add set conforming to flake schema here:
+        apps.${system}.default = {
+          type = "app";
+          program = "${md}/bin/md";
+        };
         packages.${system}.default = md;
         devShells.${system}.default = mkDevShell pkgs;
         formatter.${system} = pkgs.alejandra;
