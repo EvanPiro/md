@@ -1,0 +1,26 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1671564233,
+        "narHash": "sha256-O6wJwFMgpx2WPgz8ihbYxRGvsuTU64QhFkXt7vJgWe0=",
+        "owner": "EvanPiro",
+        "repo": "nixpkgs",
+        "rev": "5ddd3c9fe322c34710a7b6dcd1653c4555230970",
+        "type": "github"
+      },
+      "original": {
+        "owner": "EvanPiro",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
