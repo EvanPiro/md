@@ -14,8 +14,10 @@
     nixpkgs.lib.pipe systems [
       (builtins.map (system: let
         pkgs = nixpkgs.legacyPackages.${system}.pkgs;
+        md = import ./. pkgs;
       in {
         # Add set conforming to flake schema here:
+        packages.${system}.default = md;
         devShells.${system}.default = mkDevShell pkgs;
         formatter.${system} = pkgs.alejandra;
       }))
