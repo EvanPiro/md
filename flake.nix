@@ -16,10 +16,6 @@
         pkgs = nixpkgs.legacyPackages.${system}.pkgs;
         mypkgs = import ./. pkgs;
       in {
-        # apps.${system}.md = {
-        #  type = "app";
-        #  program = "${md}/bin/md";
-        # };
         packages.${system} = mypkgs;
         devShells.${system}.default = mkDevShell pkgs;
         formatter.${system} = pkgs.alejandra;
