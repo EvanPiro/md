@@ -1,5 +1,5 @@
 {
-  description = "Dev shell sandbox";
+  description = "An assortment of tools";
   inputs = {
     nixpkgs.url = "github:EvanPiro/nixpkgs";
   };
@@ -14,14 +14,13 @@
     nixpkgs.lib.pipe systems [
       (builtins.map (system: let
         pkgs = nixpkgs.legacyPackages.${system}.pkgs;
-        md = import ./. pkgs;
+        mypkgs = import ./. pkgs;
       in {
-        # Add set conforming to flake schema here:
-        apps.${system}.default = {
-          type = "app";
-          program = "${md}/bin/md";
-        };
-        packages.${system}.default = md;
+        # apps.${system}.md = {
+        #  type = "app";
+        #  program = "${md}/bin/md";
+        # };
+        packages.${system} = mypkgs;
         devShells.${system}.default = mkDevShell pkgs;
         formatter.${system} = pkgs.alejandra;
       }))
